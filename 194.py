@@ -1,0 +1,30 @@
+"""
+    Problem 194
+    ===========
+    
+    Consider graphs built with the units A: and B: , where the units are glued
+    alongthe vertical edges as in the graph .
+    
+    A configuration of type (a,b,c) is a graph thus built of a units A and b
+    units B, where the graph's vertices are coloured using up to c colours, so
+    that no two adjacent vertices have the same colour.
+    The compound graph above is an example of a configuration of type (2,2,6),
+    in fact of type (2,2,c) for all c ≥ 4.
+    
+    Let N(a,b,c) be the number of configurations of type (a,b,c).
+    For example, N(1,0,3) = 24, N(0,2,4) = 92928 and N(2,2,3) = 20736.
+    
+    Find the last 8 digits of N(25,75,1984).
+    
+    p_194_GraphA.png
+    p_194_GraphB.png
+    p_194_Fig.png
+    Answer: e070561d568a80a0e45d7835e3817ba4
+    
+"""
+from common import check
+
+PROBLEM_NUMBER = 194
+ANSWER_HASH = "e070561d568a80a0e45d7835e3817ba4"
+
+check(None, PROBLEM_NUMBER, ANSWER_HASH)
