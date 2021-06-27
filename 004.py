@@ -10,13 +10,10 @@
     Answer: d4cfc27d16ea72a96b83d9bdef6ce2ec
     
 """
-from common import check
+from common import check, is_factor
 
 PROBLEM_NUMBER = 4
 ANSWER_HASH = "d4cfc27d16ea72a96b83d9bdef6ce2ec"
-
-def is_factor(number, factor):
-    return number % factor== 0
 
 def is_palindrome(number):
     numberString = str(number)

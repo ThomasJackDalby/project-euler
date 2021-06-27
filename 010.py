@@ -34,6 +34,4 @@ sum = 0
 for prime in primes:
     sum = sum + prime
 
-print(primes[-1])
-
 check(sum, PROBLEM_NUMBER, ANSWER_HASH)

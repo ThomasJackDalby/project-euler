@@ -98,6 +98,7 @@ for y in range(0,grid_height):
                 sum = sum * grid[y+i][x+i]
             if sum > max_sum:
                 max_sum = sum
+                
         # Check to bottom
         if (y <= grid_height - consecutive_numbers):
             sum = 1
@@ -105,6 +106,7 @@ for y in range(0,grid_height):
                 sum = sum * grid[y+i][x]
             if sum > max_sum:
                 max_sum = sum
+
         # Check to bottom left
         if (y <= grid_height - consecutive_numbers and x >= consecutive_numbers-1):
             sum = 1
@@ -112,5 +114,5 @@ for y in range(0,grid_height):
                 sum = sum * grid[y+i][x-i]
             if sum > max_sum:
                 max_sum = sum
-                
+
 check(max_sum, PROBLEM_NUMBER, ANSWER_HASH)

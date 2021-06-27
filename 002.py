@@ -12,14 +12,14 @@
    
     Answer: 4194eb91842c8e7e6df099ca73c38f28
 """
-from common import check
+from common import check, is_factor
 
 PROBLEM_NUMBER = 2
 ANSWER_HASH = "4194eb91842c8e7e6df099ca73c38f28"
 MAX_ITERATION = 4000000
 
 def is_even(number):
-    return number % 2
+    return is_factor(number, 2)
 
 sum = 0
 fib_last = 0

@@ -8,21 +8,12 @@
     
     Answer: 94c4dd41f9dddce696557d3717d98d82
 """
-from common import check
+from common import check, is_factor, is_prime
 
 PROBLEM_NUMBER = 3
 ANSWER_HASH = "94c4dd41f9dddce696557d3717d98d82"
 
 STARTING_VALUE = 600851475143
-
-def is_factor(number, factor):
-    return number % factor == 0
-
-def is_prime(number):
-    for i in range(2,number):
-        if is_factor(number, i):
-            return False
-    return True
 
 def get_next_prime(number):
     while True:

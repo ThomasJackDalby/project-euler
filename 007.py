@@ -9,13 +9,10 @@
     
     Answer: 8c32ab09ec0210af60d392e9b2009560
 """
-from common import check
+from common import check, is_factor
 
 PROBLEM_NUMBER = 7
 ANSWER_HASH = "8c32ab09ec0210af60d392e9b2009560"
-
-def is_factor(number, factor):
-    return number % factor == 0
 
 primes = [2]
 num_of_primes = 1

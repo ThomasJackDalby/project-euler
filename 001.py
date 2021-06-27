@@ -9,13 +9,10 @@
    
     Answer: e1edf9d1967ca96767dcc2b2d6df69f4
 """
-from common import check
+from common import check, is_factor
 
 PROBLEM_NUMBER = 1
 ANSWER_HASH = "e1edf9d1967ca96767dcc2b2d6df69f4"
-
-def is_factor(number, factor):
-    return number % factor == 0
 
 sum = 0
 for i in range(1, 1000):

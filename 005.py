@@ -11,14 +11,10 @@
     Answer: bc0d0a22a7a46212135ed0ba77d22f3a
     
 """
-from common import check
+from common import check, is_factor
 
 PROBLEM_NUMBER = 5
 ANSWER_HASH = "bc0d0a22a7a46212135ed0ba77d22f3a"
-
-def is_factor(number, factor):
-    return number % factor== 0
-
 FACTORS = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
 
 number = 2520

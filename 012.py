@@ -32,4 +32,38 @@ from common import check
 PROBLEM_NUMBER = 12
 ANSWER_HASH = "8091de7d285989bbfa9a2f9f3bdcc7c0"
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+def number_of_factors(n):
+    num = 0
+    rt = n**0.5
+    f = 1
+    factors = [True]*int(rt)
+    while f < rt:
+        if not factors[f]:
+            continue
+        if n % f == 0:
+            num += 2
+        else:
+            f += 1
+    if f == rt:
+        num += 1
+    return num
+
+size = 10000000
+
+# calculate the triangular numbers
+numbers = [0] * size
+numbers[0] = 1
+for i in range(2,size):
+    numbers[i-1] = numbers[i-2] + i
+
+max = 0
+max_i = 0
+for i in range(1,size):
+    num = number_of_factors(i)
+    if num > max:
+        max = num
+        max_i = i
+        if max > 500:
+            break
+
+check(max_i, PROBLEM_NUMBER, ANSWER_HASH)
