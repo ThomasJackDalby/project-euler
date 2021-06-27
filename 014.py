@@ -24,9 +24,35 @@
     Answer: 5052c3765262bb2c6be537abd60b305e
     
 """
-from common import check
+from common import check, is_even
 
 PROBLEM_NUMBER = 14
 ANSWER_HASH = "5052c3765262bb2c6be537abd60b305e"
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+def calculate(n):
+    if is_even(n):
+        return int(n/2)
+    else:
+        return 3*n+1
+
+cache = { }
+def get_length(n):
+    if n == 1:
+        return 1
+    elif n in cache:
+        return cache[n]
+    else:
+        m = calculate(n)
+        length = get_length(m) + 1
+        cache[n] = length
+        return length
+
+max_length = 0
+best_n = None
+for n in range(1, 1000000):
+    length = get_length(n)
+    if length > max_length:
+        best_n = n
+        max_length = length
+
+check(best_n, PROBLEM_NUMBER, ANSWER_HASH)

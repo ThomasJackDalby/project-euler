@@ -4,6 +4,9 @@ def check(result, problem_number, answer_hash):
     success = hashlib.md5(f"{result}".encode()).hexdigest() == answer_hash
     print(f"Problem {problem_number} - {'Pass' if success else 'Fail'}")
 
+def is_even(number):
+    return is_factor(number, 2)
+
 def is_factor(number, factor):
     return number % factor == 0
 
