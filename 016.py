@@ -10,8 +10,12 @@
     
 """
 from common import check
+p013 = __import__('013')
 
 PROBLEM_NUMBER = 16
 ANSWER_HASH = "6a5889bb0190d0211a991f47bb19a777"
+
+def square(a):
+    p013.add()
 
 check(None, PROBLEM_NUMBER, ANSWER_HASH)
