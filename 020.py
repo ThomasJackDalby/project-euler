@@ -18,4 +18,9 @@ from common import check
 PROBLEM_NUMBER = 20
 ANSWER_HASH = "443cb001c138b2561a0d90720d6ce111"
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+value = 1
+for i in range(1, 100):
+    value *= i
+
+total = sum(int(c) for c in str(value))
+check(total, PROBLEM_NUMBER, ANSWER_HASH)
