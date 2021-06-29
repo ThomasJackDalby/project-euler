@@ -1,4 +1,4 @@
-# COMPLETE
+# COMPLETED
 """
     Problem 36
     ==========
