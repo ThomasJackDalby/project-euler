@@ -1,3 +1,4 @@
+# COMPLETED
 """
     Problem 45
     ==========
@@ -21,4 +22,25 @@ from common import check
 PROBLEM_NUMBER = 45
 ANSWER_HASH = "30dfe3e3b286add9d12e493ca7be63fc"
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+# start from the last known valid result
+tn = 285
+pn = 165
+hn = 143
+triangle = 0
+pentagonal = 0
+hexagonal = 0
+while True:
+    min_index = min(enumerate([triangle, pentagonal, hexagonal]), key=lambda a: a[1])[0]
+    if min_index == 0:
+        tn += 1
+        triangle = int(tn * (tn + 1) / 2)
+    elif min_index == 1:
+        pn += 1
+        pentagonal = int(pn * (3 * pn - 1) / 2)
+    elif min_index == 2:
+        hn += 1
+        hexagonal = int(hn * (2 * hn - 1))
+    if triangle == pentagonal == hexagonal:
+        print(f"T[{tn}] = P[{pn}] = H[{hn}] = {triangle}")
+        check(triangle, PROBLEM_NUMBER, ANSWER_HASH)
+        exit()

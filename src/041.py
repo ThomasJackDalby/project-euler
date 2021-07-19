@@ -12,6 +12,7 @@
     
 """
 from common import check
+import time
 
 PROBLEM_NUMBER = 41
 ANSWER_HASH = "d0a1bd6ab4229b2d0754be8923431404"
@@ -33,32 +34,71 @@ def is_pandigital(number):
             return False
     return sum(occurances) == n
 
-# work backwards for primes?
-
-# need to write a prime wheel
-
 def get_primes(max_prime):
-    primes = []
-
-    def create_wheel(wheel_start, wheel_end):
-        wheel_size = wheel_end - wheel_start
+    def create_wheel(primes, wheel_end):
+        wheel_start = primes[-1] + 1
+        wheel_size = wheel_end - wheel_start + 1
         digits = [True] * wheel_size
         for i in primes + list(range(wheel_start, wheel_size)):
-            print("i:", i)
             j = 2
             while True:
-                value = (i * j) - 1
+                value = i * j
                 if value > wheel_end:
-                    print(f"End: {i} x {j} = {value}")
                     break
                 digits[value - wheel_start] = False
                 j += 1
-        return [i+wheel_start for i, is_prime in enumerate(digits) if is_prime]
+        return primes + [i+wheel_start for i, is_prime in enumerate(digits) if is_prime]
 
-    primes = create_wheel(2, 10)
+    primes = [2]
+    wheel_end = 10
+    start_time = time.perf_counter()
+    while primes[-1] < max_prime:
+        primes = create_wheel(primes, wheel_end)
+        wheel_end *= 2
+        print(f"{time.perf_counter() - start_time:.3f}", f"{wheel_end:#9d}", f"{len(primes):#9d}")
 
     return primes
     
-print(get_primes(10))
+# largest n digit pandigital prime
+
+def is_prime(n, k=128):
+    """ Test if a number is prime
+        Args:
+            n -- int -- the number to test
+            k -- int -- the number of tests to do
+        return True if n is prime
+    """
+    # Test if n is not even.
+    # But care, 2 is prime !
+    if n == 2 or n == 3:
+        return True
+    if n <= 1 or n % 2 == 0:
+        return False
+    # find r and s
+    s = 0
+    r = n - 1
+    while r & 1 == 0:
+        s += 1
+        r //= 2
+    # do k tests
+    for _ in range(k):
+        a = randrange(2, n - 1)
+        x = pow(a, r, n)
+        if x != 1 and x != n - 1:
+            j = 1
+            while j < s and x != n - 1:
+                x = pow(x, 2, n)
+                if x == 1:
+                    return False
+                j += 1
+            if x != n - 1:
+                return False
+    return True
+
+
+
+
+
+print(get_primes(999999999))
 
 check(None, PROBLEM_NUMBER, ANSWER_HASH)

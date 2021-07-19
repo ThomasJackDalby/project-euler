@@ -6,8 +6,6 @@ I've used python for my solutions as I find it good for prototyping/conceptual w
 
 ## Progress
 
-The problems which have a valid solution have links to the file. This table was auto-generated using "table.py".
-
 | | | | | | | | | | |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [001](src/001.py) | [002](src/002.py) | [003](src/003.py) | [004](src/004.py) | [005](src/005.py) | [006](src/006.py) | [007](src/007.py) | [008](src/008.py) | [009](src/009.py) | [010](src/010.py) |

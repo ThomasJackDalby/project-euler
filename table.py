@@ -26,8 +26,18 @@ for i in range(1, NUMBER_OF_PROBLEMS):
         lines.append(current_line)
         current_line = ""
 
-for line in lines:
-    print(line)
+with open("README.md", "r") as file:
+    readme_lines = file.readlines()
 
-# with open("table.md", "w") as file:
-#     file.writelines(lines)
+found = False
+for line_number in range(len(readme_lines)):
+    line = readme_lines[line_number]
+    if line.startswith("## Progress"):
+        found = True
+        break
+if found == False:
+    print("Error")
+else:
+    prefix_lines = readme_lines[:line_number+2]
+    for line in prefix_lines:
+        print(line)
