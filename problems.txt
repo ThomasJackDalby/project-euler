@@ -9,11 +9,6 @@ Solutions are hashed with md5sum
 echo -n 'myanswer' | md5sum
 some systems, like macos, use the command 'md5' instead of 'md5sum'
 
-
-
-
-
-
 Problem 1
 =========
 
