@@ -8,12 +8,12 @@ I've used python for my solutions as I find it good for prototyping/conceptual w
 
 | | | | | | | | | | |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 001 <br>[python](solutions\python\001.py) | 002 <br>[python](solutions\python\002.py) | 003 <br>[python](solutions\python\003.py) | 004 <br>[python](solutions\python\004.py) | 005 <br>[python](solutions\python\005.py) | 006 <br>[python](solutions\python\006.py) | 007 <br>[python](solutions\python\007.py) | 008 <br>[python](solutions\python\008.py) | 009 <br>[python](solutions\python\009.py) | 010 <br>[python](solutions\python\010.py) |
-| 011 <br>[python](solutions\python\011.py) | 012 <br>[python](solutions\python\012.py) | 013 <br>[python](solutions\python\013.py) | 014 <br>[python](solutions\python\014.py) | 015 <br>[python](solutions\python\015.py) | 016 | 017 <br>[python](solutions\python\017.py) | 018 <br>[python](solutions\python\018.py) | 019 <br>[python](solutions\python\019.py) | 020 <br>[python](solutions\python\020.py) |
-| 021 <br>[python](solutions\python\021.py) | 022 <br>[python](solutions\python\022.py) | 023 | 024 | 025 | 026 | 027 | 028 | 029 | 030 |
-| 031 | 032 | 033 | 034 | 035 | 036 <br>[python](solutions\python\036.py) | 037 | 038 | 039 <br>[python](solutions\python\039.py)<br>[go](solutions\go\039.go) | 040 |
-| 041 <br>[python](solutions\python\041.py) | 042 | 043 | 044 | 045 <br>[python](solutions\python\045.py) | 046 | 047 | 048 | 049 | 050 |
-| 051 | 052 | 053 | 054 | 055 | 056 | 057 | 058 | 059 | 060 <br>[python](solutions\python\060.py) |
+| 001 <br>[python](solutions\\python\\001.py) | 002 <br>[python](solutions\\python\\002.py) | 003 <br>[python](solutions\\python\\003.py) | 004 <br>[python](solutions\\python\\004.py) | 005 <br>[python](solutions\\python\\005.py) | 006 <br>[python](solutions\\python\\006.py) | 007 <br>[python](solutions\\python\\007.py) | 008 <br>[python](solutions\\python\\008.py) | 009 <br>[python](solutions\\python\\009.py) | 010 <br>[python](solutions\\python\\010.py) |
+| 011 <br>[python](solutions\\python\\011.py) | 012 <br>[python](solutions\\python\\012.py) | 013 <br>[python](solutions\\python\\013.py) | 014 <br>[python](solutions\\python\\014.py) | 015 <br>[python](solutions\\python\\015.py) | 016 | 017 <br>[python](solutions\\python\\017.py) | 018 <br>[python](solutions\\python\\018.py) | 019 <br>[python](solutions\\python\\019.py) | 020 <br>[python](solutions\\python\\020.py) |
+| 021 <br>[python](solutions\\python\\021.py) | 022 <br>[python](solutions\\python\\022.py) | 023 | 024 | 025 | 026 | 027 | 028 | 029 | 030 |
+| 031 | 032 | 033 | 034 | 035 | 036 <br>[python](solutions\\python\\036.py) | 037 | 038 | 039 <br>[python](solutions\\python\\039.py)<br>[go](solutions\\go\\039.go) | 040 |
+| 041 <br>[python](solutions\\python\\041.py) | 042 | 043 | 044 | 045 <br>[python](solutions\\python\\045.py) | 046 | 047 | 048 | 049 | 050 |
+| 051 | 052 | 053 | 054 | 055 | 056 | 057 | 058 | 059 | 060 <br>[python](solutions\\python\\060.py) |
 | 061 | 062 | 063 | 064 | 065 | 066 | 067 | 068 | 069 | 070 |
 | 071 | 072 | 073 | 074 | 075 | 076 | 077 | 078 | 079 | 080 |
 | 081 | 082 | 083 | 084 | 085 | 086 | 087 | 088 | 089 | 090 |
@@ -23,7 +23,7 @@ I've used python for my solutions as I find it good for prototyping/conceptual w
 | 121 | 122 | 123 | 124 | 125 | 126 | 127 | 128 | 129 | 130 |
 | 131 | 132 | 133 | 134 | 135 | 136 | 137 | 138 | 139 | 140 |
 | 141 | 142 | 143 | 144 | 145 | 146 | 147 | 148 | 149 | 150 |
-| 151 | 152 | 153 | 154 | 155 | 156 <br>[python](solutions\python\156.py) | 157 | 158 | 159 | 160 |
+| 151 | 152 | 153 | 154 | 155 | 156 <br>[python](solutions\\python\\156.py) | 157 | 158 | 159 | 160 |
 | 161 | 162 | 163 | 164 | 165 | 166 | 167 | 168 | 169 | 170 |
 | 171 | 172 | 173 | 174 | 175 | 176 | 177 | 178 | 179 | 180 |
 | 181 | 182 | 183 | 184 | 185 | 186 | 187 | 188 | 189 | 190 |
@@ -50,7 +50,7 @@ I've used python for my solutions as I find it good for prototyping/conceptual w
 | 391 | 392 | 393 | 394 | 395 | 396 | 397 | 398 | 399 | 400 |
 | 401 | 402 | 403 | 404 | 405 | 406 | 407 | 408 | 409 | 410 |
 | 411 | 412 | 413 | 414 | 415 | 416 | 417 | 418 | 419 | 420 |
-| 421 | 422 | 423 | 424 <br>[python](solutions\python\424.py) | 425 <br>[python](solutions\python\425.py) | 426 | 427 | 428 | 429 | 430 |
+| 421 | 422 | 423 | 424 <br>[python](solutions\\python\\424.py) | 425 <br>[python](solutions\\python\\425.py) | 426 | 427 | 428 | 429 | 430 |
 | 431 | 432 | 433 | 434 | 435 | 436 | 437 | 438 | 439 | 440 |
 | 441 | 442 | 443 | 444 | 445 | 446 | 447 | 448 | 449 | 450 |
 | 451 | 452 | 453 | 454 | 455 | 456 | 457 | 458 | 459 | 460 |
