@@ -16,7 +16,7 @@ templates = [template(solutions_folder_path) for template in templates]
 def generate_table():
     rows = math.ceil(NUMBER_OF_PROBLEMS / COLUMNS)
     lines = [
-        # "| "*COLUMNS+"|\n",
+        "| "*COLUMNS+"|\n",
         "| --- "*COLUMNS+"|\n",
     ]
 
