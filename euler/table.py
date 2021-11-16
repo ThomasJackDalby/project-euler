@@ -27,7 +27,7 @@ def generate_table():
         for language in templates:
             file_path = language.get_file_path(i)
             if os.path.exists(file_path):
-                rel_path = os.path.relpath(file_path, repo_folder_path).replace("\\", "\\\\")
+                rel_path = os.path.relpath(file_path, repo_folder_path).replace("\\", "/")
                 links.append((language.name, rel_path))
 
         cell = f"| {i:03d} "
