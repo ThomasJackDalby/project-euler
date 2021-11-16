@@ -32,9 +32,9 @@ def generate_table():
             else:
                 links.append((None, None, None))
             
-        cell = f"| {i:03d} "
+        cell = f"| **{i:03d}** "
         if len(links) > 0:
-            links = "<br>".join((f"[{language}]({file_path})" if not is_completed else f"[**{language}**]({file_path})") if language is not None else "." for (language, file_path, is_completed) in links)
+            links = "<br>".join((f"[*{language}*]({file_path})" if not is_completed else f"[{language}]({file_path})") if language is not None else "." for (language, file_path, is_completed) in links)
             cell += f"<br>{links} "
 
         current_line += cell
