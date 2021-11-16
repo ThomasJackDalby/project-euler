@@ -29,10 +29,12 @@ def generate_table():
             if os.path.exists(file_path):
                 rel_path = os.path.relpath(file_path, repo_folder_path).replace("\\", "/")
                 links.append((language.name, rel_path))
-
+            else:
+                links.append((None, None))
+            
         cell = f"| {i:03d} "
         if len(links) > 0:
-            links = "<br>".join(f"[{language}]({file_path})" for (language, file_path) in links)
+            links = "<br>".join(f"[{language}]({file_path})" if language is not None else "." for (language, file_path) in links)
             cell += f"<br>{links} "
 
         current_line += cell
