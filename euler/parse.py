@@ -19,6 +19,7 @@ for line in lines:
         if current_problem_number is not None:
             current_problem_description = remove_blank_lines(current_problem_description)
             current_problem_description = remove_blank_lines(list(reversed(current_problem_description)))
+            current_problem_description.reverse()
 
             problem = {
                 "number" : current_problem_number,

@@ -15,13 +15,19 @@
     
 """
 from common import check
+from math import factorial
 
 PROBLEM_NUMBER = 20
 ANSWER_HASH = "443cb001c138b2561a0d90720d6ce111"
+FACTORIAL_NUMBER = 100
 
+# manual approach
 value = 1
-for i in range(1, 100):
+for i in range(1, FACTORIAL_NUMBER):
     value *= i
+
+# built in function
+value = factorial(FACTORIAL_NUMBER)
 
 total = sum(int(c) for c in str(value))
 check(total, PROBLEM_NUMBER, ANSWER_HASH)

@@ -1,8 +1,10 @@
 import hashlib, os
+from functools import cache
+from math import sqrt
 
 def check(result, problem_number, answer_hash):
     success = hashlib.md5(f"{result}".encode()).hexdigest() == answer_hash
-    print(f"Problem {problem_number} - {'Pass' if success else 'Fail'}")
+    print(f"Problem {problem_number} - {result} - {'Pass' if success else 'Fail'}")
 
 def get_relative_file_path(source_file_path, relative_file_path):
     folder_path = os.path.dirname(source_file_path)
@@ -19,6 +21,17 @@ def is_prime(number):
         if is_factor(number, i):
             return False
     return True
+
+@cache
+def get_factors(number):
+    """Returns a set of the factors of a number"""
+    factors = set([1, number])
+    step = 2 if number % 2 else 1
+    for factor in range(1, int(sqrt(number))+1, step):
+        if not number % factor:
+            factors.add(factor)
+            factors.add(number // factor)
+    return factors
 
 class PrimeGenerator:
     def __init__(self) -> None:
@@ -57,3 +70,8 @@ class PrimeGenerator:
             wheel_start += self.wheel_size
             for i in range(self.wheel_size):
                 wheel[i] = False
+
+if __name__ == "__main__":
+    print("factors")
+    factors = get_factors(100000000)
+    print(len(factors), factors)

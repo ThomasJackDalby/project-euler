@@ -75,5 +75,4 @@ while keep_going:
     if start_counting and weekday == 6 and day == 1:
         total += 1
 
-print(total)
 check(total, PROBLEM_NUMBER, ANSWER_HASH)
