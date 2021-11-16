@@ -6,6 +6,7 @@ I've used python for my solutions as I find it good for prototyping/conceptual w
 
 ## Progress
 
+| | | | | | | | | | |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 001 <br>[python](solutions/python/001.py)<br>. | 002 <br>[python](solutions/python/002.py)<br>. | 003 <br>[python](solutions/python/003.py)<br>. | 004 <br>[python](solutions/python/004.py)<br>. | 005 <br>[python](solutions/python/005.py)<br>. | 006 <br>[python](solutions/python/006.py)<br>. | 007 <br>[python](solutions/python/007.py)<br>. | 008 <br>[python](solutions/python/008.py)<br>. | 009 <br>[python](solutions/python/009.py)<br>. | 010 <br>[python](solutions/python/010.py)<br>. |
 | 011 <br>[python](solutions/python/011.py)<br>. | 012 <br>[python](solutions/python/012.py)<br>. | 013 <br>[python](solutions/python/013.py)<br>. | 014 <br>[python](solutions/python/014.py)<br>. | 015 <br>[python](solutions/python/015.py)<br>. | 016 <br>.<br>. | 017 <br>[python](solutions/python/017.py)<br>. | 018 <br>[python](solutions/python/018.py)<br>. | 019 <br>[python](solutions/python/019.py)<br>. | 020 <br>[python](solutions/python/020.py)<br>. |
