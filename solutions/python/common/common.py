@@ -16,15 +16,22 @@ def is_even(number):
 def is_factor(number, factor):
     return number % factor == 0
 
+@cache
 def is_prime(number):
-    for i in range(2, number):
-        if is_factor(number, i):
-            return False
-    return True
+    return len(get_factors(number)) == 2
+
+    # for i in range(2, number):
+    #     if is_factor(number, i):
+    #         return False
+    # return True
 
 @cache
 def get_factors(number):
     """Returns a set of the factors of a number"""
+
+    if number < 0:
+        raise Exception()
+
     factors = set([1, number])
     step = 2 if number % 2 else 1
     for factor in range(1, int(sqrt(number))+1, step):
