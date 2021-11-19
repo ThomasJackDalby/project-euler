@@ -1,3 +1,4 @@
+# COMPLETED
 """
     Problem 26
     ==========
@@ -25,11 +26,48 @@
     
     Answer: 6aab1270668d8cac7cef2566a1c5f569
 """
+from typing import DefaultDict
 from common import check
 
 PROBLEM_NUMBER = 26
 ANSWER_HASH = "6aab1270668d8cac7cef2566a1c5f569"
+DECIMALS = 2000
+MAX_NUMBER = 1000
 
+def accurate_divide(d, decimals):
+    return f"0.{10 ** decimals // d}"
 
+def calculate(d):
+    decimal = accurate_divide(d, DECIMALS)
+    for i, c_i in enumerate(decimal):
+        if i == 0:
+            continue
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+        for j, c_j in enumerate(decimal[:i]):
+            if c_j == c_i:
+                pattern = decimal[j:i]
+                if len(pattern) > len(decimal) - i:
+                    continue
+
+                valid = True
+                for k, c_k in enumerate(decimal[i:]):
+                    if c_k != pattern[k % len(pattern)]:
+                        valid = False
+                        break
+                if valid:
+                    return pattern
+    return None
+
+max_d = None
+max_length = 0
+max_pattern = None
+for d in range(1, MAX_NUMBER):
+    pattern = calculate(d)
+    if pattern is None:
+        continue
+    if len(pattern) > max_length:
+        max_length = len(pattern)
+        max_d = d
+        max_pattern = pattern
+
+check(max_d, PROBLEM_NUMBER, ANSWER_HASH)
