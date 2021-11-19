@@ -3,7 +3,7 @@
 import math, os, logging
 from templates import templates
 
-NUMBER_OF_PROBLEMS = 500
+NUMBER_OF_PROBLEMS = 100
 COLUMNS = 10
 
 logger = logging.getLogger("table")
