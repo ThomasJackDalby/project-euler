@@ -1,3 +1,4 @@
+# Completed
 """
     Problem 31
     ==========
