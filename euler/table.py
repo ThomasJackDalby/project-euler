@@ -14,14 +14,13 @@ solutions_folder_path = os.path.join(repo_folder_path, "solutions")
 templates = [template(solutions_folder_path) for template in templates]
 
 def generate_table():
-    rows = math.ceil(NUMBER_OF_PROBLEMS / COLUMNS)
     lines = [
         "| "*COLUMNS+"|\n",
         "| --- "*COLUMNS+"|\n",
     ]
 
     current_line = ""
-    for i in range(1, NUMBER_OF_PROBLEMS):
+    for i in range(1, NUMBER_OF_PROBLEMS+1):
         
         links = []
         for language in templates:
