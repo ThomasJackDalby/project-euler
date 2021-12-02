@@ -9,29 +9,18 @@
     
     Answer: 94c4dd41f9dddce696557d3717d98d82
 """
-from common import check, is_factor, is_prime
+from common import check, is_factor, is_prime, get_primes
 
 PROBLEM_NUMBER = 3
 ANSWER_HASH = "94c4dd41f9dddce696557d3717d98d82"
-
 STARTING_VALUE = 600851475143
 
-def get_next_prime(number):
-    while True:
-        number = number + 1
-        if is_prime(number):
-            return number
+primes = get_primes()
 
 value = STARTING_VALUE
-prime = 2
-max_prime = prime
 while value != 1:            
+    prime = next(primes)
     if is_factor(value, prime):
         value = value / prime           
-        prime = 2
-    else:
-        prime = get_next_prime(prime)
-        if prime > max_prime:
-            max_prime = prime
 
-check(max_prime, PROBLEM_NUMBER, ANSWER_HASH)
+check(prime, PROBLEM_NUMBER, ANSWER_HASH)

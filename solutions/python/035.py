@@ -14,8 +14,7 @@
     
     Answer: b53b3a3d6ab90ce0268229151c9bde11
 """
-from common import check
-from common.prime_sieve import is_prime
+from common import check, is_prime
 
 PROBLEM_NUMBER = 35
 ANSWER_HASH = "b53b3a3d6ab90ce0268229151c9bde11"
@@ -31,9 +30,5 @@ for n in range(2, 1000000):
         circular_primes.add(n)
         circular_primes.update(primes)
 
-circular_primes = list(circular_primes)
-circular_primes.sort()
-
-print(",".join((str(p) for p in circular_primes)))
 result = len(circular_primes)
 check(result, PROBLEM_NUMBER, ANSWER_HASH)

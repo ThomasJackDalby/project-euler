@@ -22,10 +22,10 @@ from common import check
 PROBLEM_NUMBER = 45
 ANSWER_HASH = "30dfe3e3b286add9d12e493ca7be63fc"
 
-# start from the last known valid result
 tn = 285
 pn = 165
 hn = 143
+
 triangle = 0
 pentagonal = 0
 hexagonal = 0

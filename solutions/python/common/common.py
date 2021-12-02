@@ -1,6 +1,9 @@
 import hashlib, os
 from functools import cache
 from math import sqrt
+from .prime_sieve import PrimeSieve
+
+_sieve = PrimeSieve()
 
 def check(result, problem_number, answer_hash):
     success = hashlib.md5(f"{result}".encode()).hexdigest() == answer_hash
@@ -18,12 +21,10 @@ def is_factor(number, factor):
 
 @cache
 def is_prime(number):
-    return len(get_factors(number)) == 2
+    return _sieve.is_prime(number)
 
-    # for i in range(2, number):
-    #     if is_factor(number, i):
-    #         return False
-    # return True
+def get_primes():
+    return _sieve.get_primes()
 
 @cache
 def get_factors(number):
