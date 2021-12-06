@@ -26,6 +26,26 @@ def is_prime(number):
 def get_primes():
     return _sieve.get_primes()
 
+# def is_prime(number):
+#     if number != 2 and number % 2 == 0:
+#         return False
+
+#     m = 0
+#     d = number - 1
+#     while d % 2 == 0:
+#         d //= 2
+#         m += 1
+    
+#     if number < 1373653:
+
+def mod_pow(n, p, m):
+    result = 1
+    for _ in range(n):
+        result *= n
+        result %= d
+    return result
+
+
 @cache
 def get_factors(number):
     """Returns a set of the factors of a number"""

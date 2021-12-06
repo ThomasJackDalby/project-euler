@@ -27,41 +27,19 @@ ANSWER_HASH = "2c2556cb85621309ca647465ffa62370"
 pentagonals = set()
 
 def get_pentagonal(n):
-    t = n * (3 * n - 1) * 0.5
-    pentagonals.add(t)
+    t = int(n * (3 * n - 1) * 0.5)
     return t
 
-def generate():
-    for i in count(1):
-        yield get_pentagonal(i)
-
-generator = generate()
-
-def is_pentagonal(n):
-    for t in takewhile(lambda t: t < n, generator):
-        pass
-    return n in pentagonals    
-
-max_difference = None
-max_i = None
-max_j = None
-
-for i in count(1):
-    p_i = get_pentagonal(i)
-    for j in range(i - 1, 0, -1):
-        p_j = get_pentagonal(j)
-
-        D = p_i - p_j
-        if max_difference is not None and D > max_difference:
+D = None
+for d in count(1):
+    p_d = get_pentagonal(d)
+    pentagonals.add(p_d)
+    for c in range(d - 1, 0, -1):
+        p_c = get_pentagonal(c)
+        p_b = p_d - p_c
+        p_a = p_c - p_b
+        if p_b not in pentagonals or p_a not in pentagonals:
             continue
 
-        if not is_pentagonal(D):
-            continue
-
-        if not is_pentagonal(p_i + p_j):
-            continue
-        
-        max_difference = D
-
-
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+        check(p_a, PROBLEM_NUMBER, ANSWER_HASH)
+        exit()

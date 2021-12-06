@@ -42,14 +42,7 @@ def find(number):
         if i < number or any(len(f) != number for f in factors):
             continue
 
-        all_factors = [f for factor in factors for f in factor]
-        unique_factors = set(all_factors)
-        if len(all_factors) == len(unique_factors):
-            for j in range(i, i-number, -1):
-                
-            print(f"{i=} {all_factors=} {unique_factors=}")
-            return i-number+1
-           
-print(find(2))
+        return i-number+1
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+result = find(4)     
+check(result, PROBLEM_NUMBER, ANSWER_HASH)
