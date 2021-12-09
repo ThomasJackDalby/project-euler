@@ -24,10 +24,22 @@
     Answer: e3b21256183cf7c2c7a66be163579d37
 """
 from common import check
+from itertools import combinations
+from math import factorial
 
 PROBLEM_NUMBER = 53
 ANSWER_HASH = "e3b21256183cf7c2c7a66be163579d37"
 
+def choose(n, r):
+    n_f = factorial(n)
+    r_f = factorial(r)
+    nmr_f = factorial(n-r)
+    return n_f / (r_f * nmr_f)
 
+total = 0
+for n in range(1, 101):
+    for r in range(1, n):
+        if choose(n, r) > 1_000_000:
+            total += 1
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+check(total, PROBLEM_NUMBER, ANSWER_HASH)
