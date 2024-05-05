@@ -1,6 +1,6 @@
 import hashlib, os
 from functools import cache
-from math import sqrt
+from math import sqrt, floor
 from .prime_sieve import PrimeSieve
 
 _sieve = PrimeSieve()
@@ -19,12 +19,24 @@ def is_even(number):
 def is_factor(number, factor):
     return number % factor == 0
 
+def is_palindrome(text):
+    if not isinstance(text, str):
+        text = str(text)
+    for i in range(floor(len(text) / 2.0)):
+        if text[i] != text[-1-i]:
+            return False
+    return True
+
 @cache
 def is_prime(number):
     return _sieve.is_prime(number)
 
 def get_primes():
     return _sieve.get_primes()
+
+def get_prime(index):
+    return _sieve.get_prime(index)
+
 
 # def is_prime(number):
 #     if number != 2 and number % 2 == 0:
@@ -38,12 +50,12 @@ def get_primes():
     
 #     if number < 1373653:
 
-def mod_pow(n, p, m):
-    result = 1
-    for _ in range(n):
-        result *= n
-        result %= d
-    return result
+# def mod_pow(n, p, m):
+#     result = 1
+#     for _ in range(n):
+#         result *= n
+#         result %= d
+#     return result
 
 
 @cache

@@ -14,17 +14,65 @@
     Answer: a4b5a70ca8cf24d0eb4330748d1e72e5
     
 """
-from common import check
+from common import check, is_prime, get_prime
+from functools import cache
+from itertools import count, takewhile
 
 PROBLEM_NUMBER = 60
 ANSWER_HASH = "a4b5a70ca8cf24d0eb4330748d1e72e5"
+GROUP_SIZE = 5
 
-# need to find 5 primes which can be prime in any concatenated configuration.
+def check_pair(a, b):
+    a = str(a)
+    b = str(b)
+    if not is_prime(int(a + b)):
+        return False
+    if not is_prime(int(b + a)):
+        return False
+    return True
 
-def concatenate(a, b):
-    # expecting a, b to be integers
-    return int(str(a)+str(b))
+def get_indexes(number):
+    current = list(range(number))
+    yield current
+    for _ in count(1):
+        for i in range(number):
+            if i == number-1 or current[i] != current[i+1]-1:
+                current[i] += 1
+                for j in range(i):
+                    current[j] = j+1
+                break
+        yield current
 
-print(concatenate(1, 23))
+## attempt 1
+generators = {}
+cached_groups = []
+def get_group(number, i):
+    if len(cached_groups[number-2]) <= i:
+        for _ in takewhile(lambda p: len(cached_groups[number-2]) <= i, generators[number]):
+            pass
+    return cached_groups[number-2][i]
 
-check(None, PROBLEM_NUMBER, ANSWER_HASH)
+def get_groups(number):
+    for indexes in get_indexes(number):
+        if number == 2:
+            primes = [get_prime(i) for i in indexes]
+            if check_pair(primes[0], primes[1]):
+                prime_set = set(primes)
+                print(",".join((str(len(g)) for g in cached_groups)), prime_set)
+                cached_groups[number-2].append(prime_set)
+                yield prime_set
+        else:
+            group = [get_group(number-1, i) for i in indexes]
+            group_set = set(prime for primes in group for prime in primes)
+            if len(group_set) == number:
+                print(",".join((str(len(g)) for g in cached_groups)), group_set)
+                cached_groups[number-2].append(group_set)
+                yield group_set
+
+if __name__ == "__main__":
+    for i in range(GROUP_SIZE):
+        generators[i] = get_groups(i)
+        cached_groups.append([])
+
+    for group in get_groups(GROUP_SIZE):
+        exit()
